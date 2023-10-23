@@ -10,6 +10,7 @@ public class Inventory
         public CollectableTypes type;
         public int count;
         public int maxAllowed;
+        public int itemPrice;
         public CollectableItem slottedItem;
 
         public Sprite icon;
@@ -19,12 +20,14 @@ public class Inventory
             type = CollectableTypes.NONE;
             count = 0;
             maxAllowed = 1;
+            itemPrice = 25;
             slottedItem = null;
         }
 
         public void AddItem(CollectableItem item)
         {
             slottedItem = item;
+            itemPrice = item.sellPrice;
             type = item.collectableType;
             icon = item.icon;
             count++;

@@ -8,6 +8,8 @@ public class CollectableItem : MonoBehaviour
 
     public Sprite icon;
 
+    public int sellPrice;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerCharacter player = collision.GetComponent<PlayerCharacter>();

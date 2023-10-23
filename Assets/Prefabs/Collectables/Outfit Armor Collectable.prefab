@@ -102,6 +102,7 @@ MonoBehaviour:
   collectableType: 1
   itemName: Armor
   icon: {fileID: -1413248469, guid: cd4ccc07f1a06d741b3de30cefb6259c, type: 3}
+  sellPrice: 35
 --- !u!61 &2263728822667448808
 BoxCollider2D:
   m_ObjectHideFlags: 0

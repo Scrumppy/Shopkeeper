@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCharacter : MonoBehaviour
+public class PlayerCharacter : Character
 {
     [SerializeField] private Inventory inventory;
     [SerializeField] private Inventory equipInventory;

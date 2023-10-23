@@ -102,6 +102,7 @@ MonoBehaviour:
   collectableType: 2
   itemName: Beanie
   icon: {fileID: 396426600, guid: bd0d78747ffba1847aff5b7b17031a70, type: 3}
+  sellPrice: 20
 --- !u!61 &3688145361812493279
 BoxCollider2D:
   m_ObjectHideFlags: 0

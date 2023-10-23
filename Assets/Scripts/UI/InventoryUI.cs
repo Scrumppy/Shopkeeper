@@ -81,6 +81,7 @@ public class InventoryUI : MonoBehaviour
             playerCharacter.GetInventory().Remove(slotID);
 
             RefreshInventory();
+            UIManager.Instance.GetShopUI().RefreshSellInventory();
         }
     }
 
@@ -90,5 +91,6 @@ public class InventoryUI : MonoBehaviour
         playerCharacter.GetInventory().Add(playerCharacter.GetEquipInventory().slots[slotID].slottedItem);
         playerCharacter.GetEquipInventory().Remove(slotID);
         RefreshInventory();
+        UIManager.Instance.GetShopUI().RefreshSellInventory();
     }
 }

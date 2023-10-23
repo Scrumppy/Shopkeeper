@@ -102,6 +102,7 @@ MonoBehaviour:
   collectableType: 2
   itemName: Wizard
   icon: {fileID: 1962861557, guid: a2a957c76788c554089919b6365f286e, type: 3}
+  sellPrice: 30
 --- !u!61 &5074805040415803443
 BoxCollider2D:
   m_ObjectHideFlags: 0
