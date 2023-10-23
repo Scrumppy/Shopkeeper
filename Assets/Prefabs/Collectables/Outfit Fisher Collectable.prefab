@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableType: 1
+  itemName: Fisher
   icon: {fileID: 250052622, guid: 76e7b3cf7e9e14d48a308cec4c513440, type: 3}
 --- !u!61 &129076302407422614
 BoxCollider2D:

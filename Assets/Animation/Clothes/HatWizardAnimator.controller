@@ -110,7 +110,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OutfitAnimatorController
+  m_Name: HatWizardAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: horizontal
@@ -178,7 +178,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8fe9901020ddfae49a779d09357246a1, type: 2}
+    m_Motion: {fileID: 7400000, guid: 49155f27898f1714386bfec3bea32f6e, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -186,7 +186,7 @@ BlendTree:
     m_DirectBlendParameter: horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ed7eb7e1e8120b94296f6b47b13e1aba, type: 2}
+    m_Motion: {fileID: 7400000, guid: 2497df700b2a0464fa308d726dce7e28, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -194,7 +194,7 @@ BlendTree:
     m_DirectBlendParameter: horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4c4f07a9cd623f341a1304f981b40f41, type: 2}
+    m_Motion: {fileID: 7400000, guid: ae1bd95ccb6f21b439b59e5cd62a8969, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -202,7 +202,7 @@ BlendTree:
     m_DirectBlendParameter: horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ce2ac6e98458e4146b94c9bc4ecbce3a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 10d6969135b080e4bb7262d46585f80a, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1

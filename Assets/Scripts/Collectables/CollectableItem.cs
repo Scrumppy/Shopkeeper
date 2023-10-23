@@ -4,6 +4,8 @@ public class CollectableItem : MonoBehaviour
 {
     public CollectableTypes collectableType;
 
+    public string itemName;
+
     public Sprite icon;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,11 +15,6 @@ public class CollectableItem : MonoBehaviour
         if (player)
         {
             player.GetInventory().Add(this);
-
-            //if (EquipManager.Instance != null)
-            //{
-            //    EquipManager.Instance.EquipItem(collectableType);
-            //}
 
             Destroy(gameObject);
         }
