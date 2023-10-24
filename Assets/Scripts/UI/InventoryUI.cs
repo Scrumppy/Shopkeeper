@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
@@ -11,16 +12,11 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] private List<EquipSlotUI> equipSlots = new List<EquipSlotUI>();
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ToggleInventory();
-        }
-    }
+    [SerializeField] private TextMeshProUGUI coinText;
 
     public void ToggleInventory()
     {
+        AudioManager.Instance?.PlaySound("OpenInventory", 1);
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
         RefreshInventory();
     }
@@ -56,6 +52,8 @@ public class InventoryUI : MonoBehaviour
                 }
             }
         }
+
+        coinText.text = GameManager.Instance?.GetPlayerCoins().ToString();
     }
 
     public void EquipItem(int slotID)
@@ -64,7 +62,9 @@ public class InventoryUI : MonoBehaviour
 
         if (!EquipManager.Instance.HasItemEquipped(itemType))
         {
-            EquipManager.Instance.EquipItem(playerCharacter.GetInventory().slots[slotID].slottedItem);
+            EquipManager.Instance?.EquipItem(playerCharacter.GetInventory().slots[slotID].slottedItem);
+
+            AudioManager.Instance?.PlaySound("Equip", 1);
 
             switch (itemType)
             {
@@ -81,13 +81,14 @@ public class InventoryUI : MonoBehaviour
             playerCharacter.GetInventory().Remove(slotID);
 
             RefreshInventory();
-            UIManager.Instance.GetShopUI().RefreshSellInventory();
+            UIManager.Instance?.GetShopUI().RefreshSellInventory();
         }
     }
 
     public void UnequipItem(int slotID)
     {
-        EquipManager.Instance.UnequipItem(playerCharacter.GetEquipInventory().slots[slotID].slottedItem);
+        EquipManager.Instance?.UnequipItem(playerCharacter.GetEquipInventory().slots[slotID].slottedItem);
+        AudioManager.Instance?.PlaySound("Equip", 1.2f);
         playerCharacter.GetInventory().Add(playerCharacter.GetEquipInventory().slots[slotID].slottedItem);
         playerCharacter.GetEquipInventory().Remove(slotID);
         RefreshInventory();

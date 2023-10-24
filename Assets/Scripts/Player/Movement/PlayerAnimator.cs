@@ -19,4 +19,9 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     }
+
+    public void FootstepSounds() 
+    {
+        AudioManager.Instance?.PlayFootstepSounds();
+    }
 }

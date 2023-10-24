@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShopUI : MonoBehaviour
@@ -20,12 +21,16 @@ public class ShopUI : MonoBehaviour
 
     [SerializeField] private GameObject sellPanel;
 
+    [SerializeField] private TextMeshProUGUI coinText;
+
     private void Awake()
     {
         if (buyPanel.activeSelf) 
         {
             sellPanel.SetActive(false);
         }
+
+        RefreshMoney();
     }
 
     public void ToggleSellPanel(bool value)
@@ -40,9 +45,14 @@ public class ShopUI : MonoBehaviour
         buyPanel.SetActive(!value);
     }
 
-    public void ToggleShop()
+    public void ToggleShop(bool value)
     {
-        shopPanel.SetActive(!shopPanel.activeSelf);
+        shopPanel.SetActive(value);
+    }
+
+    public void RefreshMoney()
+    {
+        coinText.text = GameManager.Instance?.GetShopkeeperCoins().ToString();
     }
 
     public void RefreshSellInventory()
@@ -61,6 +71,8 @@ public class ShopUI : MonoBehaviour
                 }
             }
         }
+
+        RefreshMoney();
     }
 
     public void BuyItem(int slotId)
@@ -73,10 +85,14 @@ public class ShopUI : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.AddCoins(shopkeeper, shopItems[slotId].GetBuyPrice());
-        GameManager.Instance.RemoveCoins(playerCharacter, shopItems[slotId].GetBuyPrice());
+        GameManager.Instance?.AddCoins(shopkeeper, shopItems[slotId].GetBuyPrice());
+        GameManager.Instance?.RemoveCoins(playerCharacter, shopItems[slotId].GetBuyPrice());
+
+        AudioManager.Instance?.PlaySound("Purchase", 1);
 
         playerCharacter.GetInventory().Add(collectableItems[slotId]);
+
+        RefreshMoney();
     }
 
     public void SellItem(int slotId)
@@ -89,14 +105,15 @@ public class ShopUI : MonoBehaviour
             return;
         }
 
-        Debug.Log(sellShopItemSlots[slotId].GetSellPrice());
-
         GameManager.Instance.AddCoins(playerCharacter, sellShopItemSlots[slotId].GetSellPrice());
         GameManager.Instance.RemoveCoins(shopkeeper, sellShopItemSlots[slotId].GetSellPrice());
 
+        AudioManager.Instance?.PlaySound("Sell", 1);
+
         playerCharacter.GetInventory().Remove(slotId);
         RefreshSellInventory();
-        UIManager.Instance.GetInventoryUI().RefreshInventory();
-    }
+        UIManager.Instance?.GetInventoryUI().RefreshInventory();
 
+        RefreshMoney();
+    }
 }

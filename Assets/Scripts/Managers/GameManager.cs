@@ -9,6 +9,12 @@ public class GameManager : BaseManager<GameManager>
 
     [SerializeField] private float shopKeeperSellModifier;
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+        AudioManager.Instance?.PlayMusic("Gameplay");
+    }
+
     public void AddCoins(Character character, int amount)
     {
         if (!character) return;

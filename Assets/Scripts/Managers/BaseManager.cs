@@ -8,7 +8,7 @@ public abstract class BaseManager<U> : MonoBehaviour where U : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

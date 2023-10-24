@@ -12,7 +12,7 @@ public class Shopkeeper : Character
     {
         if (isPlayerInteracting && Input.GetKeyDown(KeyCode.E))
         {
-            UIManager.Instance.GetShopUI().ToggleShop();
+            UIManager.Instance.GetShopUI().ToggleShop(true);
         }
     }
 
@@ -31,7 +31,7 @@ public class Shopkeeper : Character
         if (player)
         {
             isPlayerInteracting = false;
-            UIManager.Instance.GetShopUI().ToggleShop();
+            UIManager.Instance.GetShopUI().ToggleShop(false);
         }
     }
 }

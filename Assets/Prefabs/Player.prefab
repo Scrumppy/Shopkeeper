@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3267751974591105224}
   - component: {fileID: 3267751974591105228}
   - component: {fileID: 1028091045295110984}
-  - component: {fileID: 3998427753531056393}
   - component: {fileID: 3267751974591105227}
   - component: {fileID: 3267751974591105226}
   m_Layer: 0
@@ -68,21 +67,6 @@ MonoBehaviour:
     slots: []
   equipInventory:
     slots: []
-  playerCoins: {fileID: 0}
---- !u!114 &3998427753531056393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3267751974591105223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c13afca5b978428d4840b59d838d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsAmount: 0
-  maxCoinsAmount: 0
 --- !u!50 &3267751974591105227
 Rigidbody2D:
   serializedVersion: 4
